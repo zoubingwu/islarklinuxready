@@ -1,0 +1,20 @@
+{
+  "name": "islarklinuxready",
+  "version": "1.0.0",
+  "description": "Is Lark/Feishu linux-ready now?",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo \"we're good\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoubingwu/islarklinuxready.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoubingwu/islarklinuxready/issues"
+  },
+  "homepage": "https://github.com/zoubingwu/islarklinuxready#readme"
+}
