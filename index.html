@@ -47,8 +47,23 @@
   <p id="result">Nope.</p>
   <script>
     (function () {
+      if (!Array.prototype.some) {
+        Array.prototype.some = function(fun, thisArg) {
+          var t = Object(this);
+          var len = t.length >>> 0;
+
+          for (var i = 0; i < len; i++) {
+            if (i in t && fun.call(thisArg, t[i], i, t)) {
+              return true;
+            }
+          }
+
+          return false;
+        };
+      }
+
       function hasVersion(versions, target) {
-        return versions.some(v => v.toLowerCase().includes(target));
+        return versions.some(v => v.toLowerCase().indexOf(target) > -1);
       }
 
       var url = "https://www.feishu.cn/api/downloads";
