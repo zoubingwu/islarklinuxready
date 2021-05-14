@@ -47,12 +47,17 @@
   <p id="result">Nope.</p>
   <script>
     (function () {
+      function hasVersion(versions, target) {
+        return versions.some(v => v.toLowerCase().includes(target));
+      }
+
       var url = "https://www.feishu.cn/api/downloads";
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
           var result = JSON.parse(xhr.responseText);
-          if (result.versions.Linux) {
+
+          if (hasVersion(Object.keys(result.versions), 'linux')) {
             document.querySelector('#result').innerHTML = 'Yes!!!'
           }
         }
