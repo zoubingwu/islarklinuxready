@@ -73,7 +73,7 @@
           var result = JSON.parse(xhr.responseText);
 
           if (hasVersion(Object.keys(result.versions), 'linux')) {
-            document.querySelector('#result').innerHTML = 'Yes!!!'
+            document.querySelector('#result').innerHTML = '<div>Yes!!!</div><a href="https://www.feishu.cn/download" target="_blank">Go to download page.</a>'
           }
         }
       }
